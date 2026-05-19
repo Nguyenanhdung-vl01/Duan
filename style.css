@@ -174,3 +174,227 @@ footer {
   font-size: 0.95rem;
   color: #666;
 }
+
+/* ==========================================
+   RESPONSIVE DESIGN - Màn hình nhỏ
+   ========================================== */
+
+/* 1. TABLET: Dưới 768px */
+@media (max-width: 768px) {
+  /* Header: Giảm padding, chữ nhỏ hơn */
+  header {
+    padding: 15px 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* Thay vì 2rem */
+  }
+
+  /* Menu: Xếp dọc thay vì ngang */
+  nav ul {
+    flex-direction: column; /* Đổi từ row sang column */
+    gap: 8px;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Main: Giảm padding */
+  main {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  /* Cards: 1 cột thay vì nhiều cột */
+  .card-grid {
+    grid-template-columns: 1fr; /* Chỉ 1 cột */
+    gap: 15px;
+  }
+
+  /* Hero buttons: Xếp dọc */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* 2. MOBILE: Dưới 480px */
+@media (max-width: 480px) {
+  /* Font chữ nhỏ hơn nữa */
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Menu: Chữ nhỏ hơn, dễ chạm */
+  nav a {
+    padding: 12px; /* Vùng chạm lớn hơn */
+    font-size: 0.95rem;
+  }
+
+  /* Main: Bo góc ít hơn */
+  main {
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  /* Cards: Padding nhỏ hơn */
+  .card {
+    padding: 15px;
+  }
+
+  .card-icon {
+    font-size: 2rem; /* Icon nhỏ hơn */
+  }
+
+  /* Footer: Chữ nhỏ */
+  footer {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  /* Ảnh: Luôn vừa màn hình */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Table (nếu có): Cuộn ngang */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* 3. ULTRA SMALL: Dưới 360px */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 4. HELPER: Đảm bảo ảnh & video responsive */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. TOUCH-FRIENDLY: Nút dễ chạm trên mobile */
+@media (max-width: 768px) {
+  button,
+  .btn,
+  nav a,
+  .card {
+    min-height: 44px; /* Chuẩn Apple: vùng chạm tối thiểu 44px */
+    min-width: 44px;
+  }
+}
+/* ==========================================
+   CĂN GIỮA TOÀN BỘ THÀNH PHẦN
+   ========================================== */
+
+/* 1. TEXT & TIÊU ĐỀ */
+header h1,
+main h2,
+main h3,
+main p,
+footer,
+.toc,
+.toc a,
+section h2,
+section p {
+  text-align: center;
+}
+
+/* 2. KHỐI CHÍNH */
+main {
+  max-width: 900px;
+  margin: 0 auto; /* Căn giữa theo chiều ngang */
+  padding: 25px 20px; /* Padding đều 2 bên */
+}
+
+section,
+.card,
+.hero {
+  margin: 20px auto; /* Căn giữa + khoảng cách dọc */
+}
+
+/* 3. MENU & NÚT */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+nav a,
+.btn {
+  display: inline-block; /* Để margin/padding hoạt động đúng */
+  text-align: center;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* 4. ẢNH & MEDIA */
+img,
+video,
+iframe {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. CARDS GRID - Căn giữa lưới */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Căn giữa các cột */
+}
+
+/* 6. FOOTER */
+footer {
+  text-align: center;
+  margin: 30px auto 10px;
+}
