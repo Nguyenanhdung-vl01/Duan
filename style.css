@@ -1,0 +1,176 @@
+/* 1. BACKGROUND: Ảnh nền toàn trang */
+body {
+  background-image: url("hinhanh2.jpg"); /* Đường dẫn đến ảnh nền */
+  background-size: cover; /* Ảnh phủ kín màn hình */
+  background-position: center; /* Căn giữa ảnh */
+  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  background-attachment: fixed; /* Ảnh cố định khi cuộn */
+}
+/* 1. RESET: Xóa khoảng cách mặc định của trình duyệt, giúp tính toán kích thước dễ hơn */
+* {
+  margin: 0; /* Xóa khoảng cách ngoài */
+  padding: 0; /* Xóa khoảng cách trong */
+  box-sizing: border-box; /* Tính toán kích thước bao gồm padding và border */
+  font-family: "Segoe UI", Arial, sans-serif; /* Font chữ hiện đại, dễ đọc */
+}
+
+/* 2. BODY: Màu nền nhẹ, căn chỉnh font */
+body {
+  background-color: #f4f7fa; /* Màu nền sáng, dễ chịu */
+  color: #2c3e50; /* Màu chữ tối, dễ đọc */
+  line-height: 1.6; /* Khoảng cách giữa các dòng */
+  padding: 20px; /* Khoảng cách xung quanh nội dung */
+}
+
+/* 3. HEADER: Khung chứa tiêu đề + menu */
+header {
+  background: linear-gradient(
+    135deg,
+    #0066cc,
+    #004499
+  ); /* Màu nền gradient từ xanh sáng đến xanh đậm */
+  color: white; /* Màu chữ trắng nổi bật trên nền xanh */
+  padding: 20px; /* Khoảng cách bên trong */
+  text-align: center; /* Căn giữa nội dung */
+  border-radius: 10px; /* Bo góc cho header */
+  margin-bottom: 25px; /* Khoảng cách dưới header */
+}
+
+/* 4. NAV: Xếp menu ngang bằng Flexbox */
+nav ul {
+  list-style: none; /* Bỏ dấu chấm đầu dòng */
+  display: flex; /* Chuyển danh sách thành hàng ngang */
+  justify-content: center; /* Căn giữa */
+  gap: 12px; /* Khoảng cách giữa các mục */
+  flex-wrap: wrap; /* Tự xuống dòng nếu màn hình hẹp */
+  margin-top: 15px; /* Khoảng cách trên so với tiêu đề */
+}
+
+/* 5. LINK: Trang trí liên kết */
+nav a {
+  text-decoration: none; /* Bỏ gạch chân */
+  color: white; /* Màu chữ trắng */
+  background: rgba(255, 255, 255, 0.2); /* Nền trắng mờ cho link */
+  padding: 8px 14px; /* Khoảng cách bên trong */
+  border-radius: 6px; /* Bo góc cho link */
+  transition: 0.3s; /* Hiệu ứng mượt khi hover */
+}
+
+/* 6. HOVER & ACTIVE: Trạng thái khi rê chuột hoặc đang ở trang đó */
+nav a:hover,
+nav a.active {
+  background: white; /* Nền trắng khi hover hoặc active */
+  color: #004499; /* Màu chữ xanh đậm khi hover hoặc active */
+  font-weight: bold; /* Chữ đậm khi hover hoặc active */
+}
+
+/* 7. MAIN: Khung chứa nội dung chính */
+main {
+  max-width: 900px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa khung */
+  background: white; /* Màu nền trắng */
+  padding: 25px; /* Khoảng cách bên trong */
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bóng nhẹ */
+}
+
+/* 8. FOOTER: Chân trang */
+footer {
+  text-align: center; /* Căn giữa */
+  margin-top: 30px; /* Khoảng cách trên */
+  color: #7f8c8d; /* Màu xám nhạt */
+  font-size: 0.9rem; /* Kích thước chữ nhỏ hơn */
+}
+/* 1. HERO: Vùng chào mừng */
+.hero {
+  text-align: center; /* Căn giữa nội dung */
+  padding: 60px 20px; /* Khoảng cách lớn để tạo ấn tượng */
+  background: linear-gradient(
+    135deg,
+    #f0f8ff,
+    #e6f2ff
+  ); /* Màu nền gradient nhẹ nhàng */
+  border-radius: 12px; /* Bo góc cho vùng hero */
+  margin-bottom: 40px; /* Khoảng cách dưới hero */
+}
+.hero h1 {
+  font-size: 2rem; /* Kích thước chữ lớn */
+  margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+  color: #004499; /* Màu chữ xanh đậm */
+}
+.hero p {
+  color: #555; /* Màu chữ xám đậm */
+  font-size: 1.1rem; /* Kích thước chữ vừa phải */
+  margin-bottom: 25px; /* Khoảng cách dưới mô tả */
+}
+
+/* 2. BUTTONS: Nút dẫn hành động */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.btn.primary {
+  background: #0066cc;
+  color: white;
+}
+.btn.secondary {
+  background: white;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. FEATURES & CARDS: Lưới thẻ lựa chọn */
+.features h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  border: 1px solid #eee;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.card-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.card h3 {
+  margin: 10px 0 5px;
+  color: #004499;
+}
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+}
